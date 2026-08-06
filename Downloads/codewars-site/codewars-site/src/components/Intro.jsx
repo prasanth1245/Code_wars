@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import introVideo from "../assets/thorvideo.mp4"; 
 import "./Intro.css";
 
 // Changed back to 'onFinish' so your App.jsx actually hears the signal!
@@ -19,7 +18,6 @@ export default function Intro({ onFinish }) {
 
     // Safety fallback: If the video fails to load or the browser blocks 
     // the 'onEnded' event, this forces the site to open after 8 seconds.
-    // (You can change 8000 to match the exact length of your video in milliseconds)
     const timer = setTimeout(() => {
       handleFinish();
     }, 8000); 
@@ -35,7 +33,7 @@ export default function Intro({ onFinish }) {
     <div className="intro-container">
       <video
         className="intro-video"
-        src={introVideo}
+        src="/thorvideo.mp4"
         autoPlay
         muted /* Browsers require 'muted' for videos to auto-play instantly */
         playsInline
