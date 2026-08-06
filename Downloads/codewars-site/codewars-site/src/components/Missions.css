@@ -1,0 +1,221 @@
+.missions {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4rem, 9vw, 7rem) 0;
+}
+
+/* Ensure content stays ABOVE the background */
+.missions .relative-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- OPTION 3: BIFROST DATA STREAM ---- */
+.bg-bifrost {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #060d1a; 
+  overflow: hidden;
+}
+
+.bifrost-stream {
+  position: absolute;
+  inset: -20%; /* Makes it slightly larger than the screen to hide edges */
+  /* Creates the sharp vertical light streaks using pure CSS */
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(77, 240, 255, 0.12) 2%,
+    rgba(77, 240, 255, 0.35) 4%,
+    transparent 8%,
+    rgba(255, 215, 0, 0.15) 12%,
+    transparent 15%,
+    rgba(37, 99, 235, 0.25) 18%,
+    transparent 25%
+  );
+  background-size: 100% 200%;
+  filter: blur(16px); /* Gives it that optical glowing light effect */
+  animation: bifrost-flow 18s linear infinite;
+  
+  /* Fades the sides so the vertical beam concentrates in the center */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+@keyframes bifrost-flow {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -200%; }
+}
+
+.missions__title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-top: 0.5rem;
+}
+
+.missions__sub {
+  color: var(--text-dim);
+  max-width: 52ch;
+  margin-top: 0.9rem;
+}
+
+.missions__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.terminal {
+  position: relative;
+  padding: 1.8rem 1.6rem;
+  background: linear-gradient(180deg, var(--bg-panel), var(--bg-panel-2));
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+.terminal:hover {
+  transform: translateY(-6px);
+}
+
+.terminal--blue { --accent: var(--blue); }
+.terminal--gold { --accent: var(--gold); }
+.terminal--crimson { --accent: var(--crimson); }
+
+.terminal:hover {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+  box-shadow: 0 12px 40px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.terminal__bracket {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--accent);
+  opacity: 0.85;
+}
+.terminal__bracket--tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.terminal__bracket--tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+.terminal__bracket--bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+.terminal__bracket--br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+.terminal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+}
+
+.terminal__tag {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.terminal__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: dot-pulse 1.8s ease-in-out infinite;
+}
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.terminal__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-top: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.terminal__duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.terminal__objective {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.terminal__details {
+  list-style: none;
+  margin-top: 1.2rem;
+  padding-top: 1.1rem;
+  border-top: 1px dashed color-mix(in srgb, var(--accent) 35%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.terminal__details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--text-dim);
+}
+.terminal__details svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.terminal__objectives {
+  list-style: none;
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.terminal__objectives li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+.terminal__objectives svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.terminal__scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40%;
+  top: -40%;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent) 12%, transparent), transparent);
+  animation: terminal-scan 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes terminal-scan {
+  0% { top: -40%; }
+  100% { top: 110%; }
+}
+
+@media (max-width: 900px) {
+  .missions__grid {
+    grid-template-columns: 1fr;
+  }
+}

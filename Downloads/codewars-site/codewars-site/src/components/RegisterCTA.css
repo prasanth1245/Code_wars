@@ -1,0 +1,84 @@
+.register {
+  padding: clamp(3rem, 7vw, 5rem) 0 clamp(4rem, 9vw, 6rem);
+}
+
+.register__panel {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(2.4rem, 6vw, 4rem) 1.5rem;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(229, 9, 20, 0.14), transparent 60%),
+    radial-gradient(circle at 20% 100%, color-mix(in srgb, var(--thor-lightning) 16%, transparent), transparent 55%),
+    radial-gradient(circle at 80% 100%, color-mix(in srgb, var(--gold) 10%, transparent), transparent 55%),
+    var(--bg-panel);
+  border: 1px solid var(--border);
+}
+
+/* Thor-theme: lightning flicker sweeping across the final CTA panel */
+.register__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 40%,
+    color-mix(in srgb, var(--thor-lightning-bright) 22%, transparent) 48%,
+    color-mix(in srgb, var(--thor-lightning-white) 30%, transparent) 50%,
+    color-mix(in srgb, var(--thor-lightning-bright) 22%, transparent) 52%,
+    transparent 60%
+  );
+  background-size: 220% 220%;
+  animation: register-lightning-sweep 5.5s ease-in-out infinite;
+}
+@keyframes register-lightning-sweep {
+  0%, 100% { background-position: 130% 0%; opacity: 0; }
+  4% { opacity: 1; }
+  10% { opacity: 0; }
+  50% { opacity: 0; }
+  54% { opacity: 1; }
+  60% { background-position: -30% 0%; opacity: 0; }
+}
+
+.register__ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: register-spin 30s linear infinite;
+}
+.register__ring::before {
+  content: "";
+  position: absolute;
+  inset: 40px;
+  border: 1px solid rgba(21, 101, 192, 0.18);
+  border-radius: 50%;
+}
+@keyframes register-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.register__title {
+  position: relative;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin-top: 0.5rem;
+}
+
+.register__text {
+  position: relative;
+  max-width: 46ch;
+  margin: 1rem auto 0;
+  color: var(--text-dim);
+}
+
+.register__btn {
+  position: relative;
+  margin-top: 2rem;
+}

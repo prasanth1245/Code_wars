@@ -1,0 +1,133 @@
+:root {
+  --bg: #050505;
+  --bg-panel: #0a0a10;
+  --bg-panel-2: #0d0d14;
+  --crimson: #e50914;
+  --crimson-dim: #7a0710;
+  --blue: #1565c0;
+  --blue-dim: #0b3a70;
+  --gold: #ffd700;
+  --white: #ffffff;
+  --text-dim: #9aa0ac;
+  --text-dimmer: #5c626e;
+  --border: rgba(255, 255, 255, 0.08);
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Poppins", sans-serif;
+
+  /* ---- Thor / Asgardian accent palette (additive — used by section backgrounds) ---- */
+  --thor-lightning: #4aa3ff;
+  --thor-lightning-bright: #7fc7ff;
+  --thor-lightning-white: #d9ecff;
+  --thor-silver: #e2e8f0;
+  --thor-silver-dim: #94a3b8;
+  --thor-space: #050508;
+  --thor-space-2: #0a0a12;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+::selection {
+  background: var(--crimson);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--crimson), var(--blue));
+  border-radius: 6px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 4rem);
+}
+
+/* ---- shared Thor-theme background animations (used across section CSS files) ---- */
+@keyframes thor-lightning-flicker {
+  0%, 100% { opacity: 0.45; }
+  7% { opacity: 0.85; }
+  9% { opacity: 0.25; }
+  19% { opacity: 0.7; }
+  23% { opacity: 0.35; }
+  58% { opacity: 0.55; }
+  61% { opacity: 0.8; }
+}
+
+@keyframes thor-storm-drift {
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 100%; }
+}
+
+@keyframes thor-glow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

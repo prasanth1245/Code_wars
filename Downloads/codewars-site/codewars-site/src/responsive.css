@@ -1,0 +1,135 @@
+/* ==========================================
+   GLOBAL RESPONSIVE BREAKPOINTS & LAYOUT FIXES
+   ========================================== */
+
+/* 1. TABLET & SMALL LAPTOP ADAPTATIONS (<= 1024px) */
+@media screen and (max-width: 1024px) {
+  /* Global Container Padding */
+  .container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Section Spacing Adjustments */
+  section {
+    padding: 3.5rem 0 !important;
+  }
+
+  /* Font Scaling for Headings */
+  h1, .hero__title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
+  }
+  
+  h2, .contact__title, .flow__title, .rules__title, .faq__title, .about__title {
+    font-size: clamp(1.8rem, 4vw, 2.4rem) !important;
+  }
+}
+
+/* 2. MOBILE LANDSCAPE & TABLETS PORTRAIT (<= 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Grid Layout Fallbacks to Single Column */
+  .rules__grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Prevent text overlapping or clipping on small screens */
+  .about__card {
+    padding: 1.8rem 1.2rem !important;
+  }
+
+  .about__stats {
+    flex-wrap: wrap;
+    gap: 1.5rem !important;
+  }
+
+  /* Contact / Hotlines Layout */
+  .contact__hotlines {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Hotline touch targets for mobile */
+  .hotline-card {
+    padding: 1rem 1.2rem !important;
+  }
+
+  .hotline-card__number {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* 3. SMALL MOBILE PHONES (<= 480px) */
+@media screen and (max-width: 480px) {
+  /* Touch & Viewport Safeguards */
+  html, body {
+    overflow-x: hidden !important; /* Prevents unwanted horizontal scrolling */
+    width: 100%;
+  }
+
+  /* Hero Section Mobile Adjustments */
+  .hero__title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Battle Flow Mobile Adjustments */
+  .flow__line {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+    margin-left: 0.5rem !important;
+  }
+
+  .flow__node {
+    flex-direction: row !important;
+    text-align: left !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .flow__label {
+    margin-top: 0 !important;
+  }
+
+  /* Organizers Grid: 2 columns on small screens */
+  .contact__grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem !important;
+  }
+
+  .org-card {
+    flex: none !important;
+    width: 100% !important;
+    padding: 0.6rem !important;
+  }
+
+  .org-card__avatar {
+    height: 120px !important;
+  }
+
+  .org-card__name {
+    font-size: 0.8rem !important;
+  }
+
+  .org-card__role {
+    font-size: 0.68rem !important;
+  }
+
+  /* FAQ Padding Adjustments */
+  .faq-item__question {
+    padding: 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .faq-item__answer {
+    padding: 0 1rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}

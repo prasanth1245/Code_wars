@@ -1,0 +1,93 @@
+.about {
+  position: relative;
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  overflow: hidden;
+  /* COSMIC SPACE REALM BACKGROUND */
+  background: 
+    radial-gradient(circle at 50% 20%, rgba(0, 242, 255, 0.16) 0%, rgba(6, 13, 26, 0.6) 50%, transparent 85%),
+    linear-gradient(180deg, #02050e 0%, #081226 50%, #02050e 100%);
+}
+
+/* Thor-theme: calm Asgardian-blue glow */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 20%, rgba(0, 242, 255, 0.15), transparent 65%),
+    radial-gradient(ellipse 40% 30% at 15% 80%, rgba(255, 215, 0, 0.1), transparent 70%);
+  animation: thor-glow-pulse 7s ease-in-out infinite;
+}
+
+.about__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.about__card {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  padding: clamp(2rem, 4vw, 3.2rem);
+  background: rgba(8, 16, 36, 0.7);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px -20px rgba(0, 242, 255, 0.2);
+  text-align: center;
+}
+
+.about__title {
+  font-size: clamp(1.7rem, 3.6vw, 2.3rem);
+  margin-top: 0.5rem;
+}
+
+.about__text {
+  margin-top: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.85;
+  font-size: 0.98rem;
+}
+
+.about__text strong {
+  color: #ffd700;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.about__stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.6rem, 5vw, 3.2rem);
+  margin-top: 2.4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed rgba(0, 242, 255, 0.25);
+}
+
+.about__stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.about__stat-value {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #00f2ff;
+  text-shadow: 0 0 16px rgba(0, 242, 255, 0.6);
+}
+
+.about__stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}

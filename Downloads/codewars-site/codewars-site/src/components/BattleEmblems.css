@@ -1,0 +1,24 @@
+.emblem-wm {
+  position: absolute;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+.emblem-wm--shield {
+  width: clamp(280px, 34vw, 480px);
+  height: auto;
+  top: 50%;
+  left: -8%;
+  transform: translateY(-50%);
+}
+.emblem-wm--armor {
+  width: clamp(240px, 30vw, 420px);
+  height: auto;
+  top: 50%;
+  right: -6%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 900px) {
+  .emblem-wm { display: none; }
+}

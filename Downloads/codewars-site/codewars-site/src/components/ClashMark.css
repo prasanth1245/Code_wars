@@ -1,0 +1,36 @@
+.clash-mark {
+  display: block;
+  overflow: visible;
+}
+
+.clash-mark--animated .clash-mark__burst {
+  animation: clash-burst-pulse 2.4s ease-in-out infinite;
+  transform-origin: 100px 100px;
+}
+@keyframes clash-burst-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.85; }
+}
+
+.clash-mark--animated .clash-mark__blade--l {
+  animation: clash-blade-nudge-l 2.4s ease-in-out infinite;
+}
+.clash-mark--animated .clash-mark__blade--r {
+  animation: clash-blade-nudge-r 2.4s ease-in-out infinite;
+}
+@keyframes clash-blade-nudge-l {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(2px); }
+}
+@keyframes clash-blade-nudge-r {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clash-mark--animated .clash-mark__burst,
+  .clash-mark--animated .clash-mark__blade--l,
+  .clash-mark--animated .clash-mark__blade--r {
+    animation: none;
+  }
+}

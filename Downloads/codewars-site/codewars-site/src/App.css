@@ -1,0 +1,20 @@
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.page--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page--visible {
+  opacity: 1;
+  transition: opacity 0.9s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page--visible {
+    transition: none;
+  }
+}
