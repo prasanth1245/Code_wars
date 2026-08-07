@@ -5,8 +5,8 @@ const getAssetUrl = (filename) => {
   return new URL(`../assets/${filename}`, import.meta.url).href;
 };
 
-// 11 ORGANIZERS IN YOUR EXACT SPECIFIED ORDER
-const ORGANIZERS = [
+// 11 TEAM MEMBERS IN YOUR EXACT SPECIFIED ORDER
+const TEAM_MEMBERS = [
   { name: "Kevin",  image: getAssetUrl("kevin.jpg.jpeg") },
   { name: "Prasanth", image: getAssetUrl("Prasanth.jpeg") },
   { name: "Pradarshan", image: getAssetUrl("pradarshan.jpeg") },
@@ -35,7 +35,7 @@ export default function Contact() {
       </div>
 
       <div className="container relative-container">
-        {/* HEADER */}
+        {/* 1. EVENT ORGANIZERS HEADER */}
         <div className="contact__header">
           <span className="contact__tag"></span>
           <h2 className="contact__title">
@@ -43,29 +43,48 @@ export default function Contact() {
           </h2>
         </div>
 
-        {/* 11 ORGANIZERS WITH PHOTOS */}
-        <div className="contact__grid">
-          {ORGANIZERS.map((org, index) => (
-            <div key={index} className="org-card">
-              <div className="org-card__avatar">
-                <img 
-                  src={org.image} 
-                  alt={org.name} 
-                  onError={(e) => {
-                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(org.name)}&background=040814&color=00f2ff&bold=true`;
-                  }} 
-                />
-              </div>
-
-              <div className="org-card__info">
-                <h3 className="org-card__name">{org.name}</h3>
-                <p className="org-card__role">{org.role}</p>
-              </div>
-            </div>
-          ))}
+        {/* 2. GROUP PHOTO SECTION */}
+        <div className="group-photo__container">
+          <img 
+            src={getAssetUrl("Group.jpeg")} 
+            alt="Code Wars Group" 
+            className="group-photo__img" 
+            onError={(e) => {
+              e.target.src = "https://via.placeholder.com/900x400/040814/00f2ff?text=Code+Wars+Team";
+            }}
+          />
         </div>
 
-        {/* CONTACT NUMBERS BELOW */}
+        {/* 3. OUR TEAM SECTION (11 MEMBERS CARDS) */}
+        <div className="team__section">
+          <div className="contact__header">
+            <h2 className="contact__title">
+              OUR <span className="text-cyan">TEAM</span>
+            </h2>
+          </div>
+
+          <div className="contact__grid">
+            {TEAM_MEMBERS.map((member, index) => (
+              <div key={index} className="org-card">
+                <div className="org-card__avatar">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    onError={(e) => {
+                      e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=040814&color=00f2ff&bold=true`;
+                    }} 
+                  />
+                </div>
+
+                <div className="org-card__info">
+                  <h3 className="org-card__name">{member.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 4. DIRECT CONTACTS */}
         <div className="contact__bottom-section">
           <span className="contact__tag">// DIRECT CONTACTS</span>
           <div className="contact__hotlines">
