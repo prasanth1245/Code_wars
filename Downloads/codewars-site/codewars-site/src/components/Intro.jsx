@@ -31,13 +31,6 @@ export default function Intro({ onFinish }) {
 
   return (
     <div className="intro-container">
-      {/* Top Banner Image (Mobile Only) */}
-      <img 
-        src="/intro-top.png.jpeg" 
-        alt="Top Banner" 
-        className="intro-banner intro-banner--top" 
-      />
-
       <video
         className="intro-video"
         src="/thorvideo.mp4"
@@ -46,14 +39,7 @@ export default function Intro({ onFinish }) {
         playsInline
         onEnded={handleFinish} /* Automatically moves to Hero page when video finishes! */
       />
-
-      {/* Bottom Banner Image (Mobile Only) */}
-      <img 
-        src="/intro-bottom.png.jpeg" 
-        alt="Bottom Banner" 
-        className="intro-banner intro-banner--bottom" 
-      />
-
+      
       <button type="button" className="skip-btn" onClick={handleFinish}>
         SKIP INTRO
       </button>
