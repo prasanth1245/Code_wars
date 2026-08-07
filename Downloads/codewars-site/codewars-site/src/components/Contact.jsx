@@ -21,7 +21,7 @@ const ORGANIZERS = [
 ];
 
 const HOTLINES = [
-  { label: "Main Query", number: "+91 9841872167" },
+  { label: "Main Query", number: "+91 9043657186" },
   { label: "Registration Support", number: "+91 99626 71081" },
 ];
 

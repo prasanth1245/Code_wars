@@ -31,7 +31,7 @@ const MISSIONS = [
       { icon: FaFileLines, label: "Printed question paper, tick/circle answers — zero devices" },
       { icon: FaCode, label: "60% Technical: programming basics, CS fundamentals, logic, problem solving" },
       { icon: FaMasksTheater, label: "40% Marvel: MCU, characters, powers, storylines" },
-      { icon: FaTrophy, label: "Ranked by score — Top 6 teams advance" },
+      { icon: FaTrophy, label: "Ranked by score — The Teams will be qualfied to next round." },
     ],
     objectives: [
       { icon: FaCode, label: "Programming" },
@@ -47,7 +47,7 @@ const MISSIONS = [
     tag: "Mission 02 · 1v1 Showdown",
     duration: "15–20 Minutes",
     objective:
-      "Six qualified teams split into three head-to-head duels. Every team starts with 50 Lifeline Points — choose your battles wisely, or watch them drain to zero.",
+      "The qualified teams split into head-to-head duels. Every team starts with 100 Lifeline Points — choose your battles wisely, or watch them drain to zero.",
     details: [
       { icon: FaUsers, label: " Qualified teams from round 1 will face in 1v1 battle " },
       { icon: FaHeartPulse, label: "100 Lifeline Points per team at the start" },
