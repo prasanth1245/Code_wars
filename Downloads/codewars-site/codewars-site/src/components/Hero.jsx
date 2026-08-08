@@ -57,7 +57,12 @@ export default function Hero() {
           <p className="hero__dept">Department of Computer Science and Engineering</p>
 
           <div className="hero__cta">
-            <a href="#register" className="btn btn--primary">
+            <a 
+              href="https://cyborgs2k26.tech/events/register?event=marvel-code-wars" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn--primary"
+            >
               Register Now <FaArrowRight aria-hidden="true" />
             </a>
             <a href="#missions" className="btn btn--ghost">

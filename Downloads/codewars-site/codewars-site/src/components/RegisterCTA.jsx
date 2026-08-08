@@ -20,7 +20,12 @@ export default function RegisterCTA() {
             Seats in the arena are limited. Assemble your team and step into the CODE WARS
             gauntlet before the portal closes.
           </p>
-          <a href="#" className="btn btn--primary register__btn">
+          <a 
+            href="https://cyborgs2k26.tech/events/register?event=marvel-code-wars" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn--primary register__btn"
+          >
             Register Now <FaArrowRight aria-hidden="true" />
           </a>
         </motion.div>

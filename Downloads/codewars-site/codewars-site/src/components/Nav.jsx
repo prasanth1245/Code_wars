@@ -8,7 +8,7 @@ const LINKS = [
   { href: "#about", label: "About" },
   { href: "#rules", label: "Rules" },
   { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" }, /* <--- ADDED NAV LINK */
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -39,7 +39,12 @@ export default function Nav() {
           ))}
         </nav>
 
-        <a href="#register" className="nav__cta">
+        <a 
+          href="https://cyborgs2k26.tech/events/register?event=marvel-code-wars" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="nav__cta"
+        >
           Register
         </a>
 
@@ -62,7 +67,12 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <a href="#register" onClick={() => setOpen(false)}>
+          <a 
+            href="https://cyborgs2k26.tech/events/register?event=marvel-code-wars" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            onClick={() => setOpen(false)}
+          >
             Register
           </a>
         </div>
