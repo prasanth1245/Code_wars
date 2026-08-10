@@ -5,19 +5,25 @@ const getAssetUrl = (filename) => {
   return new URL(`../assets/${filename}`, import.meta.url).href;
 };
 
-// 11 TEAM MEMBERS IN YOUR EXACT SPECIFIED ORDER
-const TEAM_MEMBERS = [
+// ROW 1: EXACTLY 6 MEMBERS
+const ROW_1_MEMBERS = [
   { name: "Kevin",  image: getAssetUrl("kevin.jpg.jpeg") },
   { name: "Prasanth", image: getAssetUrl("Prasanth.jpeg") },
   { name: "Pradarshan", image: getAssetUrl("pradarshan.jpeg") },
   { name: "Nakul",  image: getAssetUrl("Nakul.jpeg") },
   { name: "Preethi",  image: getAssetUrl("preethi.jpeg") },
   { name: "Ranjeetha",  image: getAssetUrl("Ranjeetha.jpeg") },
+];
+
+// ROW 2: EXACTLY 7 MEMBERS
+const ROW_2_MEMBERS = [
   { name: "Mummaneni Nivas",  image: getAssetUrl("nivas.jpg.jpeg") },
   { name: "Mugil Priya",  image: getAssetUrl("priya.jpg.jpeg") },
   { name: "Mohanasundaram", image: getAssetUrl("Mohan.jpg.jpeg") },
   { name: "Keerthana", image: getAssetUrl("keerthana.jpeg") },
   { name: "Nripesh Ajay", image: getAssetUrl("Ajay.jpeg") },
+  { name: "Lathika", image: getAssetUrl("Lathika.jpeg") },
+  { name: "Kavin suganth", image: getAssetUrl("kavinsuganth.jpeg") },
 ];
 
 const HOTLINES = [
@@ -55,7 +61,7 @@ export default function Contact() {
           />
         </div>
 
-        {/* 3. OUR TEAM SECTION (11 MEMBERS CARDS) */}
+        {/* 3. OUR TEAM SECTION */}
         <div className="team__section">
           <div className="contact__header">
             <h2 className="contact__title">
@@ -63,8 +69,9 @@ export default function Contact() {
             </h2>
           </div>
 
-          <div className="contact__grid">
-            {TEAM_MEMBERS.map((member, index) => (
+          {/* ROW 1 (6 MEMBERS) */}
+          <div className="contact__grid contact__grid--row1">
+            {ROW_1_MEMBERS.map((member, index) => (
               <div key={index} className="org-card">
                 <div className="org-card__avatar">
                   <img 
@@ -75,7 +82,26 @@ export default function Contact() {
                     }} 
                   />
                 </div>
+                <div className="org-card__info">
+                  <h3 className="org-card__name">{member.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
 
+          {/* ROW 2 (7 MEMBERS) */}
+          <div className="contact__grid contact__grid--row2">
+            {ROW_2_MEMBERS.map((member, index) => (
+              <div key={index} className="org-card">
+                <div className="org-card__avatar">
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    onError={(e) => {
+                      e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=040814&color=00f2ff&bold=true`;
+                    }} 
+                  />
+                </div>
                 <div className="org-card__info">
                   <h3 className="org-card__name">{member.name}</h3>
                 </div>
